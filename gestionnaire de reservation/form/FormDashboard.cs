@@ -34,6 +34,7 @@ namespace gestionnaire_de_reservation
             movePanel(buttonDashboard);
             userControlClient1.Hide();
             userControlSalle1.Hide();
+            userControlUserTests1.Hide();
            
           
         }
@@ -44,7 +45,8 @@ namespace gestionnaire_de_reservation
             userControlClient1.Show();
             userControlSalle1.Hide();
             userControlAdmins1.Hide();
-           
+            userControlUserTests1.Hide();
+
         }
 
         private void buttonRoom_Click(object sender, EventArgs e)
@@ -53,7 +55,8 @@ namespace gestionnaire_de_reservation
             userControlClient1.Hide();
             userControlSalle1.Show();
             userControlAdmins1.Hide();
-            
+            userControlUserTests1.Hide();
+
         }
 
         private void buttonReservation_Click(object sender, EventArgs e)
@@ -62,7 +65,8 @@ namespace gestionnaire_de_reservation
             userControlClient1.Hide();
             userControlSalle1.Hide();
             userControlAdmins1.Hide();
-            
+            userControlUserTests1.Show();
+
         }
 
         private void userControlSalles1_Load(object sender, EventArgs e)
@@ -76,6 +80,7 @@ namespace gestionnaire_de_reservation
             userControlClient1.Hide();
             userControlSalle1.Hide();
             userControlAdmins1.Show();
+            userControlUserTests1.Hide();
 
         }
 

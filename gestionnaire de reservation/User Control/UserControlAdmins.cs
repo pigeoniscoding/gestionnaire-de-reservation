@@ -22,6 +22,7 @@ namespace gestionnaire_de_reservation
         public UserControlAdmins()
         {
             InitializeComponent();
+            LoadUserData();
             
 
         }

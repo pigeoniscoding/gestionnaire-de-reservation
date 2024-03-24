@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddReservationData.cs" />
     <Compile Include="form\FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalleData.cs" />
+    <Compile Include="DeleteReservationData.cs" />
     <Compile Include="User Control\UserControlClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +103,12 @@
     </Compile>
     <Compile Include="User Control\UserControlAdmins.Designer.cs">
       <DependentUpon>UserControlAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UserControlUserTests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UserControlUserTests.Designer.cs">
+      <DependentUpon>UserControlUserTests.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="form\FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
@@ -132,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UserControltests.resx">
       <DependentUpon>UserControltests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UserControlUserTests.resx">
+      <DependentUpon>UserControlUserTests.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
