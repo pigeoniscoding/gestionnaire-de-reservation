@@ -55,10 +55,26 @@
             this.textBoxFirstName1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxAddPhone = new System.Windows.Forms.TextBox();
+            this.textBoxAddBirthday = new System.Windows.Forms.TextBox();
+            this.buttonAddClient = new System.Windows.Forms.Button();
+            this.textBoxAddEmail = new System.Windows.Forms.TextBox();
+            this.textBoxAddLastName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxAddFirstName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxAddPassword = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControlClient.SuspendLayout();
             this.tabPageSearchClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             this.tabPageUpdateAndDeleteClient.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlClient
@@ -66,6 +82,7 @@
             this.tabControlClient.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.tabControlClient.Controls.Add(this.tabPageSearchClient);
             this.tabControlClient.Controls.Add(this.tabPageUpdateAndDeleteClient);
+            this.tabControlClient.Controls.Add(this.tabPage1);
             this.tabControlClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlClient.Location = new System.Drawing.Point(0, 0);
             this.tabControlClient.Name = "tabControlClient";
@@ -195,9 +212,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(17, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 18);
+            this.label1.Size = new System.Drawing.Size(147, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ajouter un Client";
+            this.label1.Text = "Chercher un Client";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabPageUpdateAndDeleteClient
@@ -218,7 +235,7 @@
             this.tabPageUpdateAndDeleteClient.Location = new System.Drawing.Point(4, 4);
             this.tabPageUpdateAndDeleteClient.Name = "tabPageUpdateAndDeleteClient";
             this.tabPageUpdateAndDeleteClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUpdateAndDeleteClient.Size = new System.Drawing.Size(1023, 387);
+            this.tabPageUpdateAndDeleteClient.Size = new System.Drawing.Size(1094, 432);
             this.tabPageUpdateAndDeleteClient.TabIndex = 1;
             this.tabPageUpdateAndDeleteClient.Text = "Modifier | supprimer";
             this.tabPageUpdateAndDeleteClient.UseVisualStyleBackColor = true;
@@ -350,9 +367,167 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(20, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 18);
+            this.label3.Size = new System.Drawing.Size(138, 18);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Ajouter un Client";
+            this.label3.Text = "Modifier un Client";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.textBoxAddPassword);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.textBoxAddPhone);
+            this.tabPage1.Controls.Add(this.textBoxAddBirthday);
+            this.tabPage1.Controls.Add(this.buttonAddClient);
+            this.tabPage1.Controls.Add(this.textBoxAddEmail);
+            this.tabPage1.Controls.Add(this.textBoxAddLastName);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.textBoxAddFirstName);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1094, 432);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Ajouter ";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(18, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 18);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Ajouter un Client";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(20, 239);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 16);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Telephone";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(487, 239);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(299, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Date de naissance (sous forme YYYY-MM-DD)\r\n";
+            // 
+            // textBoxAddPhone
+            // 
+            this.textBoxAddPhone.Location = new System.Drawing.Point(23, 265);
+            this.textBoxAddPhone.Name = "textBoxAddPhone";
+            this.textBoxAddPhone.Size = new System.Drawing.Size(368, 23);
+            this.textBoxAddPhone.TabIndex = 23;
+            // 
+            // textBoxAddBirthday
+            // 
+            this.textBoxAddBirthday.Location = new System.Drawing.Point(490, 265);
+            this.textBoxAddBirthday.Name = "textBoxAddBirthday";
+            this.textBoxAddBirthday.Size = new System.Drawing.Size(368, 23);
+            this.textBoxAddBirthday.TabIndex = 22;
+            // 
+            // buttonAddClient
+            // 
+            this.buttonAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAddClient.FlatAppearance.BorderSize = 0;
+            this.buttonAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddClient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAddClient.Location = new System.Drawing.Point(37, 342);
+            this.buttonAddClient.Name = "buttonAddClient";
+            this.buttonAddClient.Size = new System.Drawing.Size(166, 32);
+            this.buttonAddClient.TabIndex = 20;
+            this.buttonAddClient.Text = "Ajouter ";
+            this.buttonAddClient.UseVisualStyleBackColor = false;
+            this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
+            // 
+            // textBoxAddEmail
+            // 
+            this.textBoxAddEmail.Location = new System.Drawing.Point(23, 120);
+            this.textBoxAddEmail.Name = "textBoxAddEmail";
+            this.textBoxAddEmail.Size = new System.Drawing.Size(368, 23);
+            this.textBoxAddEmail.TabIndex = 19;
+            // 
+            // textBoxAddLastName
+            // 
+            this.textBoxAddLastName.Location = new System.Drawing.Point(490, 189);
+            this.textBoxAddLastName.Name = "textBoxAddLastName";
+            this.textBoxAddLastName.Size = new System.Drawing.Size(368, 23);
+            this.textBoxAddLastName.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Location = new System.Drawing.Point(20, 170);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 16);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Prenom";
+            // 
+            // textBoxAddFirstName
+            // 
+            this.textBoxAddFirstName.Location = new System.Drawing.Point(23, 189);
+            this.textBoxAddFirstName.Name = "textBoxAddFirstName";
+            this.textBoxAddFirstName.Size = new System.Drawing.Size(368, 23);
+            this.textBoxAddFirstName.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(487, 170);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 16);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Nom";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(20, 101);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 16);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Email";
+            // 
+            // textBoxAddPassword
+            // 
+            this.textBoxAddPassword.Location = new System.Drawing.Point(490, 120);
+            this.textBoxAddPassword.Name = "textBoxAddPassword";
+            this.textBoxAddPassword.Size = new System.Drawing.Size(368, 23);
+            this.textBoxAddPassword.TabIndex = 27;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(487, 101);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 16);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Mot De Passe";
             // 
             // UserControlClient
             // 
@@ -370,6 +545,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();
             this.tabPageUpdateAndDeleteClient.ResumeLayout(false);
             this.tabPageUpdateAndDeleteClient.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -403,5 +580,20 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxBirthDay;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxAddPhone;
+        private System.Windows.Forms.TextBox textBoxAddBirthday;
+        private System.Windows.Forms.Button buttonAddClient;
+        private System.Windows.Forms.TextBox textBoxAddEmail;
+        private System.Windows.Forms.TextBox textBoxAddLastName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxAddFirstName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxAddPassword;
+        private System.Windows.Forms.Label label14;
     }
 }

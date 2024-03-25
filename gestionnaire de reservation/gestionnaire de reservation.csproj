@@ -110,6 +110,12 @@
     <Compile Include="User Control\UserControlUserTests.Designer.cs">
       <DependentUpon>UserControlUserTests.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\UserControlTableauBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UserControlTableauBoard.Designer.cs">
+      <DependentUpon>UserControlTableauBoard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="form\FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UserControlUserTests.resx">
       <DependentUpon>UserControlUserTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UserControlTableauBoard.resx">
+      <DependentUpon>UserControlTableauBoard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

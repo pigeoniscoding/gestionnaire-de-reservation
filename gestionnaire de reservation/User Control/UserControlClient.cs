@@ -35,9 +35,11 @@ namespace gestionnaire_de_reservation.User_Control
             public string Nom { get; set; }
             public string Prenom { get; set; }
             public string Adress_mail { get; set; }
-            public long? Numero_de_telephone { get; set; }
-            public DateTime? Date_de_naissance { get; set; }
-            
+            public string Numero_de_telephone { get; set; }
+            public string Date_de_naissance { get; set; }
+            public string Mot_de_pass { get; set; }
+
+
 
         }
 
@@ -197,32 +199,69 @@ namespace gestionnaire_de_reservation.User_Control
 
         }
 
-       // private void buttonAjouterAdmin_Click(object sender, EventArgs e)
-       // {
-          //  var UserData = new UserData
-         //   {
-           //     Nom = selectedlastname,
-           //     Prenom = selectedfirstname,
-           //     Date_de_naissance = selecteddate,
-            //    Adress_mail = selectedEmail,
-            //    mdp = textBoxMdp.Text
+        private void buttonAddClient_Click(object sender, EventArgs e)
+        {
+            if (textBoxAddEmail.Text.Trim() == string.Empty || textBoxAddPassword.Text.Trim() == string.Empty || textBoxAddFirstName.Text.Trim() == string.Empty || textBoxAddLastName.Text.Trim() == string.Empty || textBoxAddPhone.Text.Trim() == string.Empty || textBoxAddBirthday.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Veuillez remplir toutes les cases", "Cases obligatoires", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            else
+            {
+                var AddClient = new UserData
+                {
+                    Nom = textBoxAddLastName.Text.Trim(),
+                    Prenom = textBoxAddFirstName.Text.Trim(),
+                    Adress_mail = textBoxAddEmail.Text.Trim(),
+                    Mot_de_pass = textBoxAddPassword.Text.Trim(),
+                    Numero_de_telephone = textBoxAddPhone.Text.Trim(),
+                    Date_de_naissance = textBoxAddBirthday.Text.Trim()
+
+                };
+
+                var client = new HttpClient();
+                client.BaseAddress = new Uri("http://localhost:3000/");
+                var json = JsonSerializer.Serialize(AddClient);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = client.PostAsync("AddClient", content).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("finally");
+                }
+                else
+                {
+                    Console.WriteLine("error");
+                }
+            }
+        }
+
+        // private void buttonAjouterAdmin_Click(object sender, EventArgs e)
+        // {
+        //  var UserData = new UserData
+        //   {
+        //     Nom = selectedlastname,
+        //     Prenom = selectedfirstname,
+        //     Date_de_naissance = selecteddate,
+        //    Adress_mail = selectedEmail,
+        //    mdp = textBoxMdp.Text
 
 
-           // };
-          //  var client = new HttpClient();
-           // client.BaseAddress = new Uri("http://localhost:3000/");
-           // var json = JsonSerializer.Serialize(UserData);
-           // var content = new StringContent(json, Encoding.UTF8, "application/json");
-           // var response = client.PostAsync("AddAdmin", content).Result;
+        // };
+        //  var client = new HttpClient();
+        // client.BaseAddress = new Uri("http://localhost:3000/");
+        // var json = JsonSerializer.Serialize(UserData);
+        // var content = new StringContent(json, Encoding.UTF8, "application/json");
+        // var response = client.PostAsync("AddAdmin", content).Result;
 
-           // if (response.IsSuccessStatusCode)
-           // {
-           //     Console.WriteLine("finally");
-           // }
-           // else
-           // {
-           //     Console.WriteLine("error");
-           // }
-       // }
+        // if (response.IsSuccessStatusCode)
+        // {
+        //     Console.WriteLine("finally");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("error");
+        // }
+        // }
     }
 }
