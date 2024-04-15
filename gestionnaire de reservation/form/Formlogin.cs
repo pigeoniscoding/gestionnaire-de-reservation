@@ -15,7 +15,7 @@ namespace gestionnaire_de_reservation
 {
     public partial class Formlogin : Form
     {
-        private string apiUrl = "http://localhost:3000/loginAdmin";
+        private string apiUrl = "http://localhost:3000/loginAdminTest";
         public Formlogin()
         {
             InitializeComponent();

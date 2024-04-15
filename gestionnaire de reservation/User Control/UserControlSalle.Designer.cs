@@ -70,16 +70,16 @@
             // tabControlSalle
             // 
             this.tabControlSalle.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControlSalle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControlSalle.Controls.Add(this.tabPage1);
             this.tabControlSalle.Controls.Add(this.tabPage2);
             this.tabControlSalle.Controls.Add(this.tabPage3);
+            this.tabControlSalle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlSalle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlSalle.ItemSize = new System.Drawing.Size(80, 22);
-            this.tabControlSalle.Location = new System.Drawing.Point(36, 14);
+            this.tabControlSalle.Location = new System.Drawing.Point(0, 0);
             this.tabControlSalle.Name = "tabControlSalle";
             this.tabControlSalle.SelectedIndex = 0;
-            this.tabControlSalle.Size = new System.Drawing.Size(1031, 417);
+            this.tabControlSalle.Size = new System.Drawing.Size(1102, 462);
             this.tabControlSalle.TabIndex = 0;
             // 
             // tabPage1
@@ -92,7 +92,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1023, 387);
+            this.tabPage1.Size = new System.Drawing.Size(1094, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Recherche";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.buttonSearchID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearchID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearchID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSearchID.Location = new System.Drawing.Point(488, 81);
+            this.buttonSearchID.Location = new System.Drawing.Point(660, 95);
             this.buttonSearchID.Name = "buttonSearchID";
             this.buttonSearchID.Size = new System.Drawing.Size(166, 32);
             this.buttonSearchID.TabIndex = 15;
@@ -125,7 +125,7 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridViewClient.Location = new System.Drawing.Point(27, 150);
+            this.dataGridViewClient.Location = new System.Drawing.Point(190, 173);
             this.dataGridViewClient.Name = "dataGridViewClient";
             this.dataGridViewClient.ReadOnly = true;
             this.dataGridViewClient.Size = new System.Drawing.Size(636, 194);
@@ -162,7 +162,7 @@
             // 
             // textBoxSearchID
             // 
-            this.textBoxSearchID.Location = new System.Drawing.Point(27, 81);
+            this.textBoxSearchID.Location = new System.Drawing.Point(221, 95);
             this.textBoxSearchID.Name = "textBoxSearchID";
             this.textBoxSearchID.Size = new System.Drawing.Size(368, 23);
             this.textBoxSearchID.TabIndex = 13;
@@ -172,7 +172,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(24, 53);
+            this.label2.Location = new System.Drawing.Point(218, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 16);
             this.label2.TabIndex = 12;
@@ -183,7 +183,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(6, 15);
+            this.label1.Location = new System.Drawing.Point(187, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 18);
             this.label1.TabIndex = 11;
@@ -337,14 +337,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1023, 387);
+            this.tabPage3.Size = new System.Drawing.Size(1094, 432);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Ajouter";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBoxCapacite
             // 
-            this.textBoxCapacite.Location = new System.Drawing.Point(537, 140);
+            this.textBoxCapacite.Location = new System.Drawing.Point(473, 140);
             this.textBoxCapacite.Name = "textBoxCapacite";
             this.textBoxCapacite.Size = new System.Drawing.Size(368, 23);
             this.textBoxCapacite.TabIndex = 36;
@@ -354,7 +354,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(124, 111);
+            this.label7.Location = new System.Drawing.Point(60, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 16);
             this.label7.TabIndex = 35;
@@ -365,7 +365,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(534, 111);
+            this.label9.Location = new System.Drawing.Point(470, 111);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 16);
             this.label9.TabIndex = 34;
@@ -376,7 +376,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(124, 190);
+            this.label10.Location = new System.Drawing.Point(60, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 16);
             this.label10.TabIndex = 33;
@@ -384,7 +384,7 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(127, 216);
+            this.textBoxDescription.Location = new System.Drawing.Point(63, 216);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(778, 59);
@@ -397,7 +397,7 @@
             this.buttonAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAjouter.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAjouter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAjouter.Location = new System.Drawing.Point(141, 293);
+            this.buttonAjouter.Location = new System.Drawing.Point(77, 293);
             this.buttonAjouter.Name = "buttonAjouter";
             this.buttonAjouter.Size = new System.Drawing.Size(166, 32);
             this.buttonAjouter.TabIndex = 30;
@@ -407,7 +407,7 @@
             // 
             // textBoxNumerodelasalle
             // 
-            this.textBoxNumerodelasalle.Location = new System.Drawing.Point(127, 140);
+            this.textBoxNumerodelasalle.Location = new System.Drawing.Point(63, 140);
             this.textBoxNumerodelasalle.Name = "textBoxNumerodelasalle";
             this.textBoxNumerodelasalle.Size = new System.Drawing.Size(368, 23);
             this.textBoxNumerodelasalle.TabIndex = 27;
@@ -417,7 +417,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(109, 31);
+            this.label12.Location = new System.Drawing.Point(45, 31);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(133, 18);
             this.label12.TabIndex = 26;

@@ -35,6 +35,7 @@ namespace gestionnaire_de_reservation
             userControlClient1.Hide();
             userControlSalle1.Hide();
             userControlUserTests1.Hide();
+            userControlTableauBoard1.Show();
            
           
         }
@@ -46,6 +47,7 @@ namespace gestionnaire_de_reservation
             userControlSalle1.Hide();
             userControlAdmins1.Hide();
             userControlUserTests1.Hide();
+            userControlTableauBoard1.Hide();
 
         }
 
@@ -56,6 +58,7 @@ namespace gestionnaire_de_reservation
             userControlSalle1.Show();
             userControlAdmins1.Hide();
             userControlUserTests1.Hide();
+            userControlTableauBoard1.Hide();
 
         }
 
@@ -66,6 +69,7 @@ namespace gestionnaire_de_reservation
             userControlSalle1.Hide();
             userControlAdmins1.Hide();
             userControlUserTests1.Show();
+            userControlTableauBoard1.Hide();
 
         }
 
@@ -81,6 +85,7 @@ namespace gestionnaire_de_reservation
             userControlSalle1.Hide();
             userControlAdmins1.Show();
             userControlUserTests1.Hide();
+            userControlTableauBoard1.Hide();
 
         }
 

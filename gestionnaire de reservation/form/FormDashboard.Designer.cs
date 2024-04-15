@@ -44,11 +44,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.userControlTableauBoard1 = new gestionnaire_de_reservation.UserControlTableauBoard();
             this.userControlUserTests1 = new gestionnaire_de_reservation.UserControlUserTests();
             this.userControlAdmins1 = new gestionnaire_de_reservation.UserControlAdmins();
             this.userControlSalle1 = new gestionnaire_de_reservation.UserControlSalle();
             this.userControlClient1 = new gestionnaire_de_reservation.User_Control.UserControlClient();
-            this.userControlTableauBoard1 = new gestionnaire_de_reservation.UserControlTableauBoard();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -269,6 +269,17 @@
             this.panel2.Size = new System.Drawing.Size(1166, 557);
             this.panel2.TabIndex = 1;
             // 
+            // userControlTableauBoard1
+            // 
+            this.userControlTableauBoard1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userControlTableauBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTableauBoard1.Location = new System.Drawing.Point(0, 0);
+            this.userControlTableauBoard1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlTableauBoard1.Name = "userControlTableauBoard1";
+            this.userControlTableauBoard1.Size = new System.Drawing.Size(1166, 557);
+            this.userControlTableauBoard1.TabIndex = 2;
+            this.userControlTableauBoard1.Visible = false;
+            // 
             // userControlUserTests1
             // 
             this.userControlUserTests1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -313,16 +324,6 @@
             this.userControlClient1.Size = new System.Drawing.Size(1166, 557);
             this.userControlClient1.TabIndex = 0;
             this.userControlClient1.Visible = false;
-            // 
-            // userControlTableauBoard1
-            // 
-            this.userControlTableauBoard1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.userControlTableauBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlTableauBoard1.Location = new System.Drawing.Point(0, 0);
-            this.userControlTableauBoard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userControlTableauBoard1.Name = "userControlTableauBoard1";
-            this.userControlTableauBoard1.Size = new System.Drawing.Size(1166, 557);
-            this.userControlTableauBoard1.TabIndex = 2;
             // 
             // FormDashboard
             // 
