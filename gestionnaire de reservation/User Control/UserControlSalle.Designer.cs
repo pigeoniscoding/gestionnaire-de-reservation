@@ -40,16 +40,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCapacity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxRoomDescription = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.textBoxID1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxFirstName1 = new System.Windows.Forms.TextBox();
+            this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBoxCapacite = new System.Windows.Forms.TextBox();
@@ -191,32 +191,32 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.textBoxCapacity);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.textBoxPhone);
+            this.tabPage2.Controls.Add(this.textBoxRoomDescription);
             this.tabPage2.Controls.Add(this.buttonDelete);
             this.tabPage2.Controls.Add(this.buttonUpdate);
             this.tabPage2.Controls.Add(this.textBoxID1);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBoxFirstName1);
+            this.tabPage2.Controls.Add(this.textBoxNumber);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1023, 387);
+            this.tabPage2.Size = new System.Drawing.Size(1094, 432);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modifier | Supprimer";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxCapacity
             // 
-            this.textBox1.Location = new System.Drawing.Point(466, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(368, 23);
-            this.textBox1.TabIndex = 25;
+            this.textBoxCapacity.Location = new System.Drawing.Point(466, 121);
+            this.textBoxCapacity.Name = "textBoxCapacity";
+            this.textBoxCapacity.Size = new System.Drawing.Size(368, 23);
+            this.textBoxCapacity.TabIndex = 25;
             // 
             // label5
             // 
@@ -251,13 +251,13 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Description";
             // 
-            // textBoxPhone
+            // textBoxRoomDescription
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(56, 197);
-            this.textBoxPhone.Multiline = true;
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(778, 59);
-            this.textBoxPhone.TabIndex = 21;
+            this.textBoxRoomDescription.Location = new System.Drawing.Point(56, 197);
+            this.textBoxRoomDescription.Multiline = true;
+            this.textBoxRoomDescription.Name = "textBoxRoomDescription";
+            this.textBoxRoomDescription.Size = new System.Drawing.Size(778, 59);
+            this.textBoxRoomDescription.TabIndex = 21;
             // 
             // buttonDelete
             // 
@@ -287,6 +287,7 @@
             this.buttonUpdate.TabIndex = 19;
             this.buttonUpdate.Text = "Modifier";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click_1);
             // 
             // textBoxID1
             // 
@@ -306,12 +307,12 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "ID";
             // 
-            // textBoxFirstName1
+            // textBoxNumber
             // 
-            this.textBoxFirstName1.Location = new System.Drawing.Point(56, 121);
-            this.textBoxFirstName1.Name = "textBoxFirstName1";
-            this.textBoxFirstName1.Size = new System.Drawing.Size(368, 23);
-            this.textBoxFirstName1.TabIndex = 16;
+            this.textBoxNumber.Location = new System.Drawing.Point(56, 121);
+            this.textBoxNumber.Name = "textBoxNumber";
+            this.textBoxNumber.Size = new System.Drawing.Size(368, 23);
+            this.textBoxNumber.TabIndex = 16;
             // 
             // label3
             // 
@@ -320,9 +321,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(38, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 18);
+            this.label3.Size = new System.Drawing.Size(131, 18);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Ajouter un Client";
+            this.label3.Text = "Ajouter une salle";
             // 
             // tabPage3
             // 
@@ -458,14 +459,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxRoomDescription;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TextBox textBoxID1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxFirstName1;
+        private System.Windows.Forms.TextBox textBoxNumber;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCapacity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPage3;

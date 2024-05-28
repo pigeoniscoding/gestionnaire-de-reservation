@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SupprimerReservation = new System.Windows.Forms.TabPage();
+            this.textBoxDeleteDate = new System.Windows.Forms.TextBox();
             this.textBoxDeleteHour = new System.Windows.Forms.TextBox();
             this.buttonDeleteReservation = new System.Windows.Forms.Button();
             this.textBoxDeleteIDRoom = new System.Windows.Forms.TextBox();
@@ -54,8 +55,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxDeleteDate = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.checkedListBoxChoseMaterial = new System.Windows.Forms.CheckedListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxAddDetails = new System.Windows.Forms.TextBox();
             this.textBoxAddDate = new System.Windows.Forms.TextBox();
             this.textBoxAddTime = new System.Windows.Forms.TextBox();
             this.buttonAddReservation = new System.Windows.Forms.Button();
@@ -64,10 +68,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.checkedListBoxChoseMaterial = new System.Windows.Forms.CheckedListBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxAddDetails = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservation)).BeginInit();
@@ -278,6 +278,13 @@
             this.SupprimerReservation.Text = "Supprimer";
             this.SupprimerReservation.UseVisualStyleBackColor = true;
             // 
+            // textBoxDeleteDate
+            // 
+            this.textBoxDeleteDate.Location = new System.Drawing.Point(26, 88);
+            this.textBoxDeleteDate.Name = "textBoxDeleteDate";
+            this.textBoxDeleteDate.Size = new System.Drawing.Size(187, 23);
+            this.textBoxDeleteDate.TabIndex = 31;
+            // 
             // textBoxDeleteHour
             // 
             this.textBoxDeleteHour.Location = new System.Drawing.Point(261, 88);
@@ -292,7 +299,7 @@
             this.buttonDeleteReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteReservation.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteReservation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonDeleteReservation.Location = new System.Drawing.Point(763, 77);
+            this.buttonDeleteReservation.Location = new System.Drawing.Point(704, 77);
             this.buttonDeleteReservation.Name = "buttonDeleteReservation";
             this.buttonDeleteReservation.Size = new System.Drawing.Size(166, 32);
             this.buttonDeleteReservation.TabIndex = 29;
@@ -351,13 +358,6 @@
             this.label8.TabIndex = 24;
             this.label8.Text = "Supprimer une Reservation\r\n\r\n";
             // 
-            // textBoxDeleteDate
-            // 
-            this.textBoxDeleteDate.Location = new System.Drawing.Point(26, 88);
-            this.textBoxDeleteDate.Name = "textBoxDeleteDate";
-            this.textBoxDeleteDate.Size = new System.Drawing.Size(187, 23);
-            this.textBoxDeleteDate.TabIndex = 31;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label14);
@@ -379,6 +379,49 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Ajouter ";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(485, 170);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 16);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Materiel";
+            // 
+            // checkedListBoxChoseMaterial
+            // 
+            this.checkedListBoxChoseMaterial.FormattingEnabled = true;
+            this.checkedListBoxChoseMaterial.Items.AddRange(new object[] {
+            "pas d\'équipements",
+            "équipements de capture video",
+            "équipements de capture audio",
+            "équipements de captures video et audio"});
+            this.checkedListBoxChoseMaterial.Location = new System.Drawing.Point(487, 189);
+            this.checkedListBoxChoseMaterial.Name = "checkedListBoxChoseMaterial";
+            this.checkedListBoxChoseMaterial.Size = new System.Drawing.Size(301, 94);
+            this.checkedListBoxChoseMaterial.TabIndex = 42;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(21, 170);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 16);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Détails\r\n";
+            // 
+            // textBoxAddDetails
+            // 
+            this.textBoxAddDetails.Location = new System.Drawing.Point(24, 199);
+            this.textBoxAddDetails.Multiline = true;
+            this.textBoxAddDetails.Name = "textBoxAddDetails";
+            this.textBoxAddDetails.Size = new System.Drawing.Size(422, 84);
+            this.textBoxAddDetails.TabIndex = 40;
             // 
             // textBoxAddDate
             // 
@@ -459,49 +502,6 @@
             this.label12.Size = new System.Drawing.Size(182, 36);
             this.label12.TabIndex = 32;
             this.label12.Text = "Ajouter une Reservation\r\n\r\n";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(485, 170);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 16);
-            this.label14.TabIndex = 43;
-            this.label14.Text = "Materiel";
-            // 
-            // checkedListBoxChoseMaterial
-            // 
-            this.checkedListBoxChoseMaterial.FormattingEnabled = true;
-            this.checkedListBoxChoseMaterial.Items.AddRange(new object[] {
-            "pas d\'équipements",
-            "équipements de capture video",
-            "équipements de capture audio",
-            "équipements de captures video et audio"});
-            this.checkedListBoxChoseMaterial.Location = new System.Drawing.Point(487, 189);
-            this.checkedListBoxChoseMaterial.Name = "checkedListBoxChoseMaterial";
-            this.checkedListBoxChoseMaterial.Size = new System.Drawing.Size(301, 94);
-            this.checkedListBoxChoseMaterial.TabIndex = 42;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(21, 170);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 16);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Détails\r\n";
-            // 
-            // textBoxAddDetails
-            // 
-            this.textBoxAddDetails.Location = new System.Drawing.Point(24, 199);
-            this.textBoxAddDetails.Multiline = true;
-            this.textBoxAddDetails.Name = "textBoxAddDetails";
-            this.textBoxAddDetails.Size = new System.Drawing.Size(422, 84);
-            this.textBoxAddDetails.TabIndex = 40;
             // 
             // UserControlUserTests
             // 

@@ -20,6 +20,7 @@ namespace gestionnaire_de_reservation
         private readonly string apiUrl = "http://localhost:3000/recupsalles";
         private int selectedID = 0;
         private string selectedIDstr = "";
+        
         public UserControlSalle()
         {
             InitializeComponent();
@@ -112,7 +113,7 @@ namespace gestionnaire_de_reservation
                 DataGridViewRow row = dataGridViewClient.Rows[e.RowIndex];
                 selectedIDstr = row.Cells["Column1"].Value.ToString(); // Sauvegarder la valeur de l'email sélectionné
                 textBoxID1.Text = selectedIDstr; // Mettre à jour le contenu de textBoxEmail1 avec l'email sélectionné
-
+             
             }
         }
 
@@ -172,6 +173,38 @@ namespace gestionnaire_de_reservation
             {
                 Console.WriteLine("error");
             }
+        }
+
+        private void buttonUpdate_Click_1(object sender, EventArgs e)
+        {
+            string Numberstr = textBoxNumber.Text;
+            string Capacitystr = textBoxCapacity.Text;
+
+            selectedID = int.Parse(selectedIDstr); //stocker le ID séléctionné 
+            var RoomData = new RoomData //preparation de l'objet a envoyer 
+            {
+                Numero_de_la_salle = int.Parse(Numberstr),
+                Capacite = int.Parse(Capacitystr),
+                Description = textBoxRoomDescription.Text,
+                Id_Salles = selectedID
+            };
+
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:3000/");
+            var json = JsonConvert.SerializeObject(RoomData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = client.PostAsync("UpdateRoom", content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("finally");
+                MessageBox.Show("la salle a été modifiée .", "Salle Modifiée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+
         }
     }
 }
