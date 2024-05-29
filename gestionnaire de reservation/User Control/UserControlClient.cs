@@ -55,6 +55,7 @@ namespace gestionnaire_de_reservation.User_Control
                     {
                         var userData = await response.Content.ReadAsAsync<UserData[]>(); // UserData représente la structure de vos données utilisateur
                         dataGridViewClient.DataSource = userData;
+                        
                     }
                     else
                     {

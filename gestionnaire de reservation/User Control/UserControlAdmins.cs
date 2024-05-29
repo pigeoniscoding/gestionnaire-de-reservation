@@ -33,7 +33,7 @@ namespace gestionnaire_de_reservation
             public string Prenom { get; set; }
             public string Adress_mail { get; set; }
             public long? Numero_de_telephone { get; set; }
-            public DateTime? Date_de_naissance { get; set; }
+            public string Date_de_naissance { get; set; }
 
 
         }

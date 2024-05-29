@@ -67,13 +67,13 @@ namespace gestionnaire_de_reservation
 
         //Task pour rechercher une salle
         // Task pour rechercher une salle
-        private async Task SearchReservation(int Id_Salles, DateTime Date, TimeSpan Time)
+        private async Task SearchReservation(int Id_Salles, string Date, TimeSpan Time)
         {
             try
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    var data = new { Id_Salles = Id_Salles, Date = Date.ToString("yyyy-MM-dd"), Time = Time.ToString(@"hh\:mm\:ss") }; // Créez un objet JSON avec les données
+                    var data = new { Id_Salles = Id_Salles, Date = Date, Time = Time.ToString(@"hh\:mm\:ss") }; // Créez un objet JSON avec les données
                     var json = JsonConvert.SerializeObject(data); // Convertissez l'objet en JSON
 
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -98,12 +98,14 @@ namespace gestionnaire_de_reservation
 
         private async void buttonSearchReservation_Click(object sender, EventArgs e)
         {
-            int Id_Salles = int.Parse(textBoxSearchIDRoom.Text.Trim());
-            DateTime Date = dateTimePicker1.Value.Date; // Obtenez uniquement la date sans l'heure
-            TimeSpan Time = TimeSpan.Parse(textBoxSearchHour.Text.Trim()); // Convertissez la chaîne d'heure en TimeSpan
+            
 
-            if (!string.IsNullOrWhiteSpace(textBoxSearchIDRoom.Text) && dateTimePicker1.Value != null && !string.IsNullOrWhiteSpace(textBoxSearchHour.Text))
+            if (!string.IsNullOrWhiteSpace(textBoxSearchIDRoom.Text) && textBoxDate.Text != null && !string.IsNullOrWhiteSpace(textBoxSearchHour.Text))
             {
+                int Id_Salles = int.Parse(textBoxSearchIDRoom.Text.Trim());
+                string Date = textBoxDate.Text; // Obtenez uniquement la date sans l'heure
+                TimeSpan Time = TimeSpan.Parse(textBoxSearchHour.Text.Trim()); // Convertissez la chaîne d'heure en TimeSpan
+
                 await SearchReservation(Id_Salles, Date, Time);
             }
             else

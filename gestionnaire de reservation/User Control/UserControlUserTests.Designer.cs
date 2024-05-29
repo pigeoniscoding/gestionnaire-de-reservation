@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageReservation = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxSearchHour = new System.Windows.Forms.TextBox();
             this.buttonSearchReservation = new System.Windows.Forms.Button();
             this.dataGridViewReservation = new System.Windows.Forms.DataGridView();
@@ -68,6 +67,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservation)).BeginInit();
@@ -91,7 +91,7 @@
             // 
             // tabPageReservation
             // 
-            this.tabPageReservation.Controls.Add(this.dateTimePicker1);
+            this.tabPageReservation.Controls.Add(this.textBoxDate);
             this.tabPageReservation.Controls.Add(this.textBoxSearchHour);
             this.tabPageReservation.Controls.Add(this.buttonSearchReservation);
             this.tabPageReservation.Controls.Add(this.dataGridViewReservation);
@@ -109,13 +109,6 @@
             this.tabPageReservation.Text = "Recherche";
             this.tabPageReservation.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(71, 101);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
             // textBoxSearchHour
             // 
             this.textBoxSearchHour.Location = new System.Drawing.Point(310, 101);
@@ -132,7 +125,7 @@
             this.buttonSearchReservation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonSearchReservation.Location = new System.Drawing.Point(753, 90);
             this.buttonSearchReservation.Name = "buttonSearchReservation";
-            this.buttonSearchReservation.Size = new System.Drawing.Size(166, 32);
+            this.buttonSearchReservation.Size = new System.Drawing.Size(131, 32);
             this.buttonSearchReservation.TabIndex = 21;
             this.buttonSearchReservation.Text = "Chercher";
             this.buttonSearchReservation.UseVisualStyleBackColor = false;
@@ -156,7 +149,7 @@
             this.dataGridViewReservation.Location = new System.Drawing.Point(6, 179);
             this.dataGridViewReservation.Name = "dataGridViewReservation";
             this.dataGridViewReservation.ReadOnly = true;
-            this.dataGridViewReservation.Size = new System.Drawing.Size(913, 181);
+            this.dataGridViewReservation.Size = new System.Drawing.Size(878, 181);
             this.dataGridViewReservation.TabIndex = 20;
             this.dataGridViewReservation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReservation_CellClick_1);
             // 
@@ -503,6 +496,13 @@
             this.label12.TabIndex = 32;
             this.label12.Text = "Ajouter une Reservation\r\n\r\n";
             // 
+            // textBoxDate
+            // 
+            this.textBoxDate.Location = new System.Drawing.Point(75, 101);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(187, 23);
+            this.textBoxDate.TabIndex = 23;
+            // 
             // UserControlUserTests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,7 +542,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBoxDeleteHour;
         private System.Windows.Forms.Button buttonDeleteReservation;
         private System.Windows.Forms.TextBox textBoxDeleteIDRoom;
@@ -564,5 +563,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxChoseMaterial;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxAddDetails;
+        private System.Windows.Forms.TextBox textBoxDate;
     }
 }
