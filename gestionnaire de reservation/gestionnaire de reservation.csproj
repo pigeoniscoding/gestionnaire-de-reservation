@@ -107,6 +107,7 @@
       <DependentUpon>Formlogin.cs</DependentUpon>
     </Compile>
     <Compile Include="ModifierClient.cs" />
+    <Compile Include="ModifyReservationdata.cs" />
     <Compile Include="PostData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -18,6 +18,7 @@ namespace gestionnaire_de_reservation
     public partial class UserControlUserTests : UserControl
     {
         private readonly string apiUrl = "http://localhost:3000/afficherReservation";
+        private int selectedReservationID;
         private int selectedID;
         private string selectedDate;
         private string selectedTime;
@@ -125,6 +126,7 @@ namespace gestionnaire_de_reservation
             {
                 DataGridViewRow row = dataGridViewReservation.Rows[e.RowIndex];
 
+                selectedReservationID = int.Parse(row.Cells[0].Value.ToString());
                 // Stocker la valeur de la colonne 3 (Index 2) dans textBoxDeleteHour
                 textBoxDeleteHour.Text = row.Cells[3].Value.ToString();
                 selectedTime = row.Cells[3].Value.ToString();
@@ -137,8 +139,8 @@ namespace gestionnaire_de_reservation
                 Console.WriteLine(textBoxDeleteIDRoom.Text);
 
                 // Stocker la valeur de la colonne 6 (Index 5) dans dateTimePickerDeleteDate
-                textBoxDeleteDate.Text = row.Cells[6].Value.ToString();
-                selectedDate = row.Cells[6].Value.ToString();
+                textBoxDeleteDate.Text = row.Cells[2].Value.ToString();
+                selectedDate = row.Cells[2].Value.ToString();
                 Console.WriteLine(textBoxDeleteDate.Text);
             }
         }
@@ -156,6 +158,7 @@ namespace gestionnaire_de_reservation
                 Time = selectedTime,
                 Id_Salles = selectedID,
             };
+            Console.WriteLine(selectedDateOnly.ToString("yyyy-MM-dd"));
             var client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:3000/");
             var json = JsonConvert.SerializeObject(Deletedata);
@@ -224,6 +227,8 @@ namespace gestionnaire_de_reservation
 
         private async Task<bool> CheckRoomReservation(int roomId, string date, string time)
         {
+          
+
             using (HttpClient client = new HttpClient())
             {
                 var data = new { Id_Salles = roomId, Date = date, Time = time };
@@ -245,6 +250,62 @@ namespace gestionnaire_de_reservation
             }
         }
 
+
+
+        private async void buttonModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ID = int.Parse(textBoxDeleteIDRoom.Text);
+                string Date = textBoxDeleteDate.Text;
+                string Time = textBoxDeleteHour.Text;
+                DateTime convertedDateTime = Convert.ToDateTime(Date);
+
+                // Extraire uniquement la date sans l'heure
+                DateTime convertedDateOnly = convertedDateTime.Date;
+
+                // Vérifiez si la salle est déjà réservée
+                bool isRoomReserved = await CheckRoomReservation(ID, convertedDateOnly.ToString("yyyy-MM-dd"), Time);
+                Console.WriteLine(isRoomReserved.ToString());
+                if (isRoomReserved)
+                {
+                    MessageBox.Show("La salle est déjà réservée pour cette date", "Veuillez choisir une autre date ou une autre salle", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var ModifyReservationdata = new ModifyReservationdata
+                    {
+                        Id_Reservation = selectedReservationID,
+                        Date = convertedDateOnly.ToString("yyyy-MM-dd"),
+                        Time = Time,
+                        Id_Salles = ID,
+                    };
+
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("http://localhost:3000/");
+                        var json = JsonConvert.SerializeObject(ModifyReservationdata);
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        // Attendez la réponse de manière asynchrone
+                        var response = await client.PostAsync("ModifyReservation", content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Réservation modifiée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erreur lors de la modification de la réservation.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Une erreur est survenue : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
     
 }
