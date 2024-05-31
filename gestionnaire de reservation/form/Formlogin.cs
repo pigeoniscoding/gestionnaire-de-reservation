@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace gestionnaire_de_reservation
@@ -71,7 +73,7 @@ namespace gestionnaire_de_reservation
         private void pictureBoxHide_Click(object sender, EventArgs e)
         {
             pictureBoxHide.Hide();
-            textBoxPassword.UseSystemPasswordChar=true;
+            textBoxPassword.UseSystemPasswordChar = true;
             pictureBoxShow.Show();
         }
 
@@ -109,10 +111,11 @@ namespace gestionnaire_de_reservation
                             // Récupérer la réponse de l'API
                             var responseContent = await response.Content.ReadAsStringAsync();
                             MessageBox.Show(responseContent, "Réponse de l'API", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                             // Rediriger vers votre tableau de bord si l'authentification est réussie
                             FormDashboard fd = new FormDashboard();
+                            fd.SetUserEmail(textBoxUsername.Text.Trim());
                             fd.Show();
+
                         }
                         else
                         {

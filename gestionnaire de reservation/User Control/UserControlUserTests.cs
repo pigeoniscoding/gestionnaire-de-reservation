@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static gestionnaire_de_reservation.UserControlSalle;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace gestionnaire_de_reservation
@@ -21,10 +22,30 @@ namespace gestionnaire_de_reservation
         private int selectedID;
         private string selectedDate;
         private string selectedTime;
+        private int IDAdminconnect;
+
+
+
+
         public UserControlUserTests()
         {
             InitializeComponent();
             LoadReservationData();
+
+        }
+
+        //stockage du ID Admin
+        private string userEmail;
+        public string UserEmail
+        {
+            get { return userEmail; }
+            set
+            {
+                userEmail = value;
+                Console.WriteLine(userEmail);
+                
+
+            }
         }
 
         //classReservationData
@@ -37,9 +58,51 @@ namespace gestionnaire_de_reservation
             public int Id_Salles { get; set; }
             public string Materiel { get; set; }
             public DateTime? Date_de_reservation { get; set; }
+            //ajouté
+            /* public string Adress_mail { get; set; }
+            public string Nom { get; set; }
+            public string Prenom { get; set; }*/
 
         }
 
+        public class ApiResponse
+        {
+            public int id { get; set; }
+        }
+        //afficher et stocker le ID
+        public async void setIDAdmin()
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    var data = new { emailAdmin = userEmail }; // Créez un objet JSON avec les données
+                    var json = JsonConvert.SerializeObject(data); // Convertissez l'objet en JSON
+                    Console.WriteLine(json);
+
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await client.PostAsync("http://localhost:3000/chercherIDconnecte", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string responseString = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine("Réponse de l'API : " + responseString);
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(responseString);
+                        IDAdminconnect = apiResponse.id;
+                        Console.WriteLine("IDAdminconnect: " + IDAdminconnect);
+                    }
+                    else
+                    {
+                        MessageBox.Show("le ID de l'admin n'est pas récupéré", "Aucun résultat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         //afficher les reservations
         private async void LoadReservationData()
         {
@@ -69,6 +132,8 @@ namespace gestionnaire_de_reservation
         // Task pour rechercher une salle
         private async Task SearchReservation(int Id_Salles, string Date, TimeSpan Time)
         {
+
+
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -98,7 +163,7 @@ namespace gestionnaire_de_reservation
 
         private async void buttonSearchReservation_Click(object sender, EventArgs e)
         {
-            
+
 
             if (!string.IsNullOrWhiteSpace(textBoxSearchIDRoom.Text) && textBoxDate.Text != null && !string.IsNullOrWhiteSpace(textBoxSearchHour.Text))
             {
@@ -116,7 +181,7 @@ namespace gestionnaire_de_reservation
 
         private void dataGridViewReservation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
         }
 
         private void dataGridViewReservation_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -125,21 +190,21 @@ namespace gestionnaire_de_reservation
             {
                 DataGridViewRow row = dataGridViewReservation.Rows[e.RowIndex];
 
-                // Stocker la valeur de la colonne 3 (Index 2) dans textBoxDeleteHour
-                textBoxDeleteHour.Text = row.Cells[3].Value.ToString();
                 selectedTime = row.Cells[3].Value.ToString();
 
-                Console.WriteLine(textBoxDeleteHour.Text);
 
                 // Stocker la valeur de la colonne 4 (Index 3) dans textBoxDeleteIDRoom
                 textBoxDeleteIDRoom.Text = row.Cells[4].Value.ToString();
                 selectedID = int.Parse(row.Cells[4].Value.ToString());
-                Console.WriteLine(textBoxDeleteIDRoom.Text);
+
 
                 // Stocker la valeur de la colonne 6 (Index 5) dans dateTimePickerDeleteDate
-                textBoxDeleteDate.Text = row.Cells[6].Value.ToString();
-                selectedDate = row.Cells[6].Value.ToString();
-                Console.WriteLine(textBoxDeleteDate.Text);
+                textBoxDeleteDate.Text = row.Cells[2].Value.ToString();
+                selectedDate = row.Cells[2].Value.ToString();
+
+                textBoxDeleteHour.Text = row.Cells[3].Value.ToString();
+                selectedTime = row.Cells[3].Value.ToString();
+
             }
         }
 
@@ -174,6 +239,7 @@ namespace gestionnaire_de_reservation
 
         private async void buttonAddReservation_Click(object sender, EventArgs e)
         {
+             setIDAdmin();
             bool isRoomReserved = await CheckRoomReservation(int.Parse(textBoxAddID.Text), textBoxAddDate.Text, textBoxAddTime.Text);
 
             if (isRoomReserved)
@@ -188,7 +254,8 @@ namespace gestionnaire_de_reservation
                 Time = textBoxAddTime.Text,
                 Id_Salles = int.Parse(textBoxAddID.Text),
                 Materiel = GetSelectedMaterial(),
-                
+                Id_Personnes_ = IDAdminconnect
+
             };
 
             string GetSelectedMaterial()
@@ -224,6 +291,8 @@ namespace gestionnaire_de_reservation
 
         private async Task<bool> CheckRoomReservation(int roomId, string date, string time)
         {
+
+
             using (HttpClient client = new HttpClient())
             {
                 var data = new { Id_Salles = roomId, Date = date, Time = time };
@@ -245,6 +314,9 @@ namespace gestionnaire_de_reservation
             }
         }
 
+
+
+
     }
-    
+
 }

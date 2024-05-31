@@ -13,6 +13,7 @@ namespace gestionnaire_de_reservation
         public string Time { get; set; }
         public int Id_Salles { get; set; }
         public string Materiel { get; set; }
-        
+        public int Id_Personnes_ { get; set; }
+
     }
 }

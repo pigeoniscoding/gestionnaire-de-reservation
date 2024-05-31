@@ -12,13 +12,14 @@ namespace gestionnaire_de_reservation
 {
     public partial class FormDashboard : Form
     {
+
         public FormDashboard()
         {
             InitializeComponent();
 
         }
 
-        private void movePanel (Control btn)
+        private void movePanel(Control btn)
         {
             panelSlide.Top = btn.Top;
             panelSlide.Height = btn.Height;
@@ -36,8 +37,8 @@ namespace gestionnaire_de_reservation
             userControlSalle1.Hide();
             userControlUserTests1.Hide();
             userControlTableauBoard1.Show();
-           
-          
+
+
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
@@ -93,5 +94,12 @@ namespace gestionnaire_de_reservation
         {
 
         }
+
+        //envoie du ID
+        public void SetUserEmail(string email)
+        {
+            userControlUserTests1.UserEmail = email;
+        }
+
     }
 }
