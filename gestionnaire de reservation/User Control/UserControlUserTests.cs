@@ -130,11 +130,59 @@ namespace gestionnaire_de_reservation
 
         //Task pour rechercher une salle
         // Task pour rechercher une salle
-        private async Task SearchReservation(int Id_Salles, string Date, TimeSpan Time)
+        private async Task SearchReservation()
         {
-
+            Console.WriteLine("je suis rentré");
+            var selectdata = new DeleteReservationData
+            {
+                Id_Salles = 0,
+                Date = "",
+                Time = ""
+                
+ 
+            };
+            if (textBoxDate.Text != string.Empty) { 
+                selectdata.Date = textBoxDate.Text;
+            }
+            if(textBoxSearchHour.Text != string.Empty)
+            {
+                selectdata.Time = textBoxSearchHour.Text;
+            }
+            if (textBoxSearchIDRoom.Text != string.Empty)
+            {
+                selectdata.Id_Salles = int.Parse(textBoxSearchIDRoom.Text);
+            }
 
             try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    
+                    var json = JsonConvert.SerializeObject(selectdata); // Convertissez l'objet en JSON
+                    Console.WriteLine(json);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    
+                    HttpResponseMessage response = await client.PostAsync("http://localhost:3000/chercherRservation1", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var reservationData = await response.Content.ReadAsAsync<ReservationData[]>(); // UserData représente la structure de vos données utilisateur
+                        dataGridViewReservation.DataSource = reservationData;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aucune reservation trouvée avec ces données.", "Aucun résultat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+
+
+
+            /*try
             {
                 using (HttpClient client = new HttpClient())
                 {
@@ -158,14 +206,29 @@ namespace gestionnaire_de_reservation
             catch (Exception ex)
             {
                 MessageBox.Show("Une erreur s'est produite : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            } */
         }
 
         private async void buttonSearchReservation_Click(object sender, EventArgs e)
         {
+            
+            if (textBoxDate.Text == string.Empty && textBoxSearchHour.Text == string.Empty && textBoxSearchIDRoom.Text == string.Empty)
+            {
+                Console.WriteLine(textBoxDate.Text + textBoxSearchHour.Text + textBoxSearchIDRoom.Text);
+                LoadReservationData();
+                Console.WriteLine("mauvais endroit");
+               
+            }
+            else
+            {
+                Console.WriteLine(textBoxDate.Text + textBoxSearchHour.Text + textBoxSearchIDRoom.Text);
+                Console.WriteLine("je marche");
+                await SearchReservation();
+                
+            }
 
 
-            if (!string.IsNullOrWhiteSpace(textBoxSearchIDRoom.Text) && textBoxDate.Text != null && !string.IsNullOrWhiteSpace(textBoxSearchHour.Text))
+            /* if (!string.IsNullOrWhiteSpace(textBoxSearchIDRoom.Text) && textBoxDate.Text != null && !string.IsNullOrWhiteSpace(textBoxSearchHour.Text))
             {
                 int Id_Salles = int.Parse(textBoxSearchIDRoom.Text.Trim());
                 string Date = textBoxDate.Text; // Obtenez uniquement la date sans l'heure
@@ -176,7 +239,7 @@ namespace gestionnaire_de_reservation
             else
             {
                 LoadReservationData();
-            }
+            }*/
         }
 
         private void dataGridViewReservation_CellClick(object sender, DataGridViewCellEventArgs e)
